@@ -8,38 +8,61 @@
 </head>
 <body>
 <script>
+
 // computer choice of wepon
+let computerValue;
+
 function computerPlay(){
-    const getMove = ["Rock", "Papper", "Scissors"]
     const computerText ='R2-D2 choice is '; 
-    const randomMove = Math.floor(Math.random() * getMove.length);
-    console.log( computerText + getMove[randomMove]); 
+    const randomMove = Math.floor(Math.random() * 3);
+    if (randomMove == 0){
+        console.log( computerText + "Rock")
+        return computerValue = 1;
+    } else if (randomMove == 1){
+        console.log( computerText + "Paper")
+        return computerValue = 2;
+    } else if (randomMove == 2){
+        console.log( computerText + "Scissors")
+        return computerValue = 3;
+    }
 }
 
 // human choice of wepon
 let playerSelection;
+let humanValue;
 
 function humanPlay(humanChoice){
     const humanText ='Human choice is ';
    if (humanChoice == 1){
-       console.log(humanText + "Rock"); 
+        console.log(humanText + "Rock"); 
+        return humanValue = 1;
     } else if (humanChoice == 2){
-    console.log(humanText + "Papper");
+        console.log(humanText + "Paper");
+        return humanValue = 2;
     }
     else if (humanChoice == 3){
-    console.log(humanText + "Scissors");
+        console.log(humanText + "Scissors");
+        return humanValue = 3;
     }
+    
 }
-//humanPlay(2);
-//computerPlay();
 
 // round against each other
 function playRound(playerSelection){
     computerPlay();
     humanPlay(playerSelection);
+   
+    if (computerValue == humanValue){
+        console.log("IT\S A TIE!");
+    } else if (computerValue > humanValue){
+        console.log("YOU DIE!");
+    } else if (computerValue < humanValue){
+        console.log("YOU WIN!!!");
+    }
+   
 }
 
-playRound(2);
+playRound(1);
 
 
 </script>
