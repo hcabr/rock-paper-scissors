@@ -11,20 +11,27 @@
 
 function computerPlay(){
     const getMove = ["Rock", "Papper", "Scissors"]
-    const computerText ='Computer choice is '; 
+    const computerText ='Bib bob choice is '; 
     const randomMove = Math.floor(Math.random() * getMove.length);
     console.log( computerText + getMove[randomMove]); 
 }
 
 function humanPlay(humanChoice){
-    let getMove = ["Rock", "Papper", "Scissors"];
-    const humanText = "Human choice is";
-    console.log(getMove(humanChoice));
+    const humanText ='Human choice is ';
+   if (humanChoice == 1){
+       console.log(humanText + "Rock"); 
+    } else if (humanChoice == 2){
+    console.log(humanText + "Papper");
+    }
+    else if (humanChoice == 3){
+    console.log(humanText + "Scissors");
+    }
+
 }
 
-// humanPlay(1);
+humanPlay(2);
 
-computerPlay();
+ computerPlay();
 
 </script>
 </body>
