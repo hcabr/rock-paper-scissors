@@ -8,13 +8,16 @@
 </head>
 <body>
 <script>
-
+// computer choice of wepon
 function computerPlay(){
     const getMove = ["Rock", "Papper", "Scissors"]
-    const computerText ='Bib bob choice is '; 
+    const computerText ='R2-D2 choice is '; 
     const randomMove = Math.floor(Math.random() * getMove.length);
     console.log( computerText + getMove[randomMove]); 
 }
+
+// human choice of wepon
+let playerSelection;
 
 function humanPlay(humanChoice){
     const humanText ='Human choice is ';
@@ -26,12 +29,18 @@ function humanPlay(humanChoice){
     else if (humanChoice == 3){
     console.log(humanText + "Scissors");
     }
+}
+//humanPlay(2);
+//computerPlay();
 
+// round against each other
+function playRound(playerSelection){
+    computerPlay();
+    humanPlay(playerSelection);
 }
 
-humanPlay(2);
+playRound(2);
 
- computerPlay();
 
 </script>
 </body>
