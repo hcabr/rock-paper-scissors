@@ -11,12 +11,20 @@
 
 function computerPlay(){
     const getMove = ["Rock", "Papper", "Scissors"]
+    const computerText ='Computer choice is '; 
     const randomMove = Math.floor(Math.random() * getMove.length);
-    console.log(randomMove, getMove[randomMove]); 
+    console.log( computerText + getMove[randomMove]); 
 }
 
-computerPlay();
+function humanPlay(humanChoice){
+    let getMove = ["Rock", "Papper", "Scissors"];
+    const humanText = "Human choice is";
+    console.log(getMove(humanChoice));
+}
 
+// humanPlay(1);
+
+computerPlay();
 
 </script>
 </body>
