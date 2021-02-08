@@ -54,15 +54,15 @@ function playRound(playerSelection){
    
     if (computerValue == humanValue){
         console.log("IT\S A TIE!");
-    } else if (computerValue > humanValue){
+    } else if (((computerValue = 1) && (humanValue = 3)) || ((computerValue = 2) && (humanValue = 1)) || ((computerValue = 3) && (humanValue = 2))){
         console.log("YOU DIE!");
-    } else if (computerValue < humanValue){
+    }  else if (((computerValue = 1) && (humanValue = 2)) || ((computerValue = 2) && (humanValue = 3)) || ((computerValue = 3) && (humanValue = 1))){
         console.log("YOU WIN!!!");
-    }
+    }  
    
 }
 
-playRound(1);
+playRound(2);
 
 
 </script>
