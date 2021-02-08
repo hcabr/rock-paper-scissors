@@ -16,19 +16,19 @@ function computerPlay(){
     const computerText ='R2-D2 choice is '; 
     const randomMove = Math.floor(Math.random() * 3);
     if (randomMove == 0){
-        console.log( computerText + "Rock")
+        console.log( computerText + "1Rock")
         return computerValue = 1;
     } else if (randomMove == 1){
-        console.log( computerText + "Paper")
+        console.log( computerText + "2Paper")
         return computerValue = 2;
     } else if (randomMove == 2){
-        console.log( computerText + "Scissors")
+        console.log( computerText + "3Scissors")
         return computerValue = 3;
     }
 }
 
 // human choice of wepon
-let playerSelection;
+
 let humanValue;
 
 function humanPlay(humanChoice){
@@ -39,8 +39,7 @@ function humanPlay(humanChoice){
     } else if (humanChoice == 2){
         console.log(humanText + "Paper");
         return humanValue = 2;
-    }
-    else if (humanChoice == 3){
+    } else if (humanChoice == 3){
         console.log(humanText + "Scissors");
         return humanValue = 3;
     }
@@ -48,23 +47,77 @@ function humanPlay(humanChoice){
 }
 
 // round against each other
+let playerSelection;
+
 function playRound(playerSelection){
     computerPlay();
     humanPlay(playerSelection);
+  
+    if (humanValue == computerValue){
+        console.log("TIE!");
+    } else if ( (humanValue == 1 && computerValue == 3) || (humanValue == 2 && computerValue == 1) || 
+    (humanValue == 3 && computerValue ==2) ){
+        console.log("YOU WIN!");
+    } else if ( (humanValue == 1 && computerValue == 2) || (humanValue == 2 && computerValue == 3) ||
+    (humanValue == 3 && computerValue == 1) ){
+        console.log("YOU LOOSE!");
+    }
    
-    if (computerValue == humanValue){
-        console.log("IT\S A TIE!");
-    } else if (((computerValue = 1) && (humanValue = 3)) || ((computerValue = 2) && (humanValue = 1)) || ((computerValue = 3) && (humanValue = 2))){
-        console.log("YOU DIE!");
-    }  else if (((computerValue = 1) && (humanValue = 2)) || ((computerValue = 2) && (humanValue = 3)) || ((computerValue = 3) && (humanValue = 1))){
-        console.log("YOU WIN!!!");
-    }  
-   
+    
 }
 
-playRound(2);
+playRound(3);
+/*
+   switch (computerValue) {
+        case computerValue = 1:
+        case humanValue = 1:
+        console.log("IT\S A TIE!");
+        break;
+
+        case computerValue = 2:
+        case humanValue = 2:
+        console.log("IT\S A TIE!");
+        break;
+
+        case computerValue = 3:
+        case humanValue = 3:
+        console.log("IT\S A TIE!");
+        break;
+
+        case computerValue = 2:
+        case humanValue = 1:
+        console.log("YOU DIE!!");
+        break;
+
+        case computerValue = 1:
+        case humanValue = 3:
+        console.log("YOU DIE!!");
+        break;
+
+        case computerValue = 3:
+        case humanValue = 2:
+        console.log("YOU DIE!!");
+        break;
+
+        case computerValue = 3:
+        case humanValue = 2:
+        console.log("YOU WIN!!!");
+ 
+   }
+*/
 
 
+ /*
+    if (computerValue == humanValue){
+        console.log("IT\S A TIE!");
+    } else if (((computerValue = 1) && (humanValue = 3)) || ((computerValue = 2) && (humanValue = 1)) || 
+    ((computerValue = 3) && (humanValue = 2))){
+        console.log("YOU DIE!");
+    }  else if (((computerValue = 1) && (humanValue = 2)) || ((computerValue = 2) && (humanValue = 3)) || 
+    ((computerValue = 3) && (humanValue = 1))){
+        console.log("YOU WIN!!!");
+    }  
+   */
 </script>
 </body>
 </html>
