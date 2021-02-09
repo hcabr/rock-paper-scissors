@@ -7,28 +7,30 @@
     <title>ROCK PAPPER SCISSORS</title>
 </head>
 <body>
+    <button onclick="game()">TRY IT</button>
 <script>
 
-// computer choice of wepon
+
+
+// computer choice of wepon - random
 let computerValue;
 
 function computerPlay(){
     const computerText ='R2-D2 choice is '; 
     const randomMove = Math.floor(Math.random() * 3);
     if (randomMove == 0){
-        console.log( computerText + "1Rock")
+        console.log( computerText + "Rock")
         return computerValue = 1;
     } else if (randomMove == 1){
-        console.log( computerText + "2Paper")
+        console.log( computerText + "Paper")
         return computerValue = 2;
     } else if (randomMove == 2){
-        console.log( computerText + "3Scissors")
+        console.log( computerText + "Scissors")
         return computerValue = 3;
     }
 }
 
-// human choice of wepon
-
+// human choice of wepon - pick a number between 1 and 3
 let humanValue;
 
 function humanPlay(humanChoice){
@@ -55,69 +57,122 @@ function playRound(playerSelection){
   
     if (humanValue == computerValue){
         console.log("TIE!");
+        return PRoutcome = "tie";
     } else if ( (humanValue == 1 && computerValue == 3) || (humanValue == 2 && computerValue == 1) || 
     (humanValue == 3 && computerValue ==2) ){
         console.log("YOU WIN!");
+        return PRoutcome = "win";
     } else if ( (humanValue == 1 && computerValue == 2) || (humanValue == 2 && computerValue == 3) ||
     (humanValue == 3 && computerValue == 1) ){
-        console.log("YOU LOOSE!");
-    }
-   
+        console.log("YOU LOSE!");
+        return PRoutcome = "lose";
+    } 
+}
+// play function
+function game(playerSelection){
+    var playerSelection = prompt ("Pick your wepon - round 1");
+    let humanScore = 0;
+    let computerScore = 0;
     
+    // ------ round 1 ------
+    
+    playRound(playerSelection);
+
+    if (PRoutcome == "tie"){
+        humanScore = humanScore + 0;
+        computerScore = computerScore + 0;
+
+    } else if (PRoutcome == "win"){
+        humanScore = humanScore + 1;
+        computerScore = computerScore + 0;
+    } else if (PRoutcome == "lose"){
+        computerScore = computerScore + 1;
+        humanScore = humanScore + 0;
+    }
+    console.log ("Round 1 - ", "PC:"+computerScore,"-", humanScore+ ":YOU") ;
+
+    
+    // ------ round 2 ------
+
+    var playerSelection = prompt ("Pick your wepon - round 2");
+
+    playRound(playerSelection);
+
+if (PRoutcome == "tie"){
+    humanScore = humanScore + 0;
+    computerScore = computerScore + 0;
+
+} else if (PRoutcome == "win"){
+    humanScore = humanScore + 1;
+    computerScore = computerScore + 0;
+} else if (PRoutcome == "lose"){
+    computerScore = computerScore + 1;
+    humanScore = humanScore + 0;
+}
+console.log ("Round 2 - ","PC:"+computerScore,"-", humanScore+ ":YOU") ;
+
+// ------ round 3 ------
+    var playerSelection = prompt ("Pick your wepon - round 3");
+
+    playRound(playerSelection);
+
+if (PRoutcome == "tie"){
+    humanScore = humanScore + 0;
+    computerScore = computerScore + 0;
+
+} else if (PRoutcome == "win"){
+    humanScore = humanScore + 1;
+    computerScore = computerScore + 0;
+} else if (PRoutcome == "lose"){
+    computerScore = computerScore + 1;
+    humanScore = humanScore + 0;
+}
+console.log ("Round 3 - ", "PC:"+computerScore,"-", humanScore+ ":YOU") ;
+
+// ------ round 4 ------
+var playerSelection = prompt ("Pick your wepon - round 4");
+
+playRound(playerSelection);
+
+if (PRoutcome == "tie"){
+humanScore = humanScore + 0;
+computerScore = computerScore + 0;
+
+} else if (PRoutcome == "win"){
+humanScore = humanScore + 1;
+computerScore = computerScore + 0;
+} else if (PRoutcome == "lose"){
+computerScore = computerScore + 1;
+humanScore = humanScore + 0;
+}
+console.log ("Round 4 - ", "PC:"+computerScore,"-", humanScore+ ":YOU") ;
+
+// ------ round 5 ------
+var playerSelection = prompt ("Pick your wepon - round 5");
+
+playRound(playerSelection);
+
+if (PRoutcome == "tie"){
+humanScore = humanScore + 0;
+computerScore = computerScore + 0;
+
+} else if (PRoutcome == "win"){
+humanScore = humanScore + 1;
+computerScore = computerScore + 0;
+} else if (PRoutcome == "lose"){
+computerScore = computerScore + 1;
+humanScore = humanScore + 0;
+}
+console.log ("Round 5 - ", "PC:"+computerScore,"-", humanScore+ ":YOU") ;
+
+if (humanScore > computerScore){
+    console.log("YOU WIN - YOU DESTROY R2-D2 TO PARTS!");
+    } else if (humanScore < computerScore){
+        console.log("R2-D2 WINS! HE BURNS YOU TO DEATH!");
+    }
 }
 
-playRound(3);
-/*
-   switch (computerValue) {
-        case computerValue = 1:
-        case humanValue = 1:
-        console.log("IT\S A TIE!");
-        break;
-
-        case computerValue = 2:
-        case humanValue = 2:
-        console.log("IT\S A TIE!");
-        break;
-
-        case computerValue = 3:
-        case humanValue = 3:
-        console.log("IT\S A TIE!");
-        break;
-
-        case computerValue = 2:
-        case humanValue = 1:
-        console.log("YOU DIE!!");
-        break;
-
-        case computerValue = 1:
-        case humanValue = 3:
-        console.log("YOU DIE!!");
-        break;
-
-        case computerValue = 3:
-        case humanValue = 2:
-        console.log("YOU DIE!!");
-        break;
-
-        case computerValue = 3:
-        case humanValue = 2:
-        console.log("YOU WIN!!!");
- 
-   }
-*/
-
-
- /*
-    if (computerValue == humanValue){
-        console.log("IT\S A TIE!");
-    } else if (((computerValue = 1) && (humanValue = 3)) || ((computerValue = 2) && (humanValue = 1)) || 
-    ((computerValue = 3) && (humanValue = 2))){
-        console.log("YOU DIE!");
-    }  else if (((computerValue = 1) && (humanValue = 2)) || ((computerValue = 2) && (humanValue = 3)) || 
-    ((computerValue = 3) && (humanValue = 1))){
-        console.log("YOU WIN!!!");
-    }  
-   */
+//game(playerSelection);
 </script>
 </body>
 </html>
